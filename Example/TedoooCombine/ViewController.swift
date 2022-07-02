@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import Combine
+import TedoooCombine
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textField: UITextField!
+    private var bag = CombineBag()
+    
+    let textFieldSubject = CurrentValueSubject<String?, Never>(nil)
+    let textViewSubject = CurrentValueSubject<String?, Never>(nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        textField.textPublisher ~> textFieldSubject => bag
+        textView.textPublisher ~> textViewSubject => bag
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func clicked(_ sender: Any) {
+        print(String(describing: textFieldSubject.value))
+        print(String(describing: textViewSubject.value))
     }
-
+    
 }
 
