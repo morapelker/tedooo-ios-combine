@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TedoooCombine'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'tedooo combine extensions'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ combine extensions
   s.ios.deployment_target = '13.0'
 
   s.source_files = 'TedoooCombine/Classes/**/*'
-  
+  s.swift_version = '5.0'
   # s.resource_bundles = {
   #   'TedoooCombine' => ['TedoooCombine/Assets/*.png']
   # }
