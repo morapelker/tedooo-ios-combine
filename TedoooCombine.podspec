@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TedoooCombine'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'tedooo combine extensions'
 
 # This description is used to generate tags and improve search results.

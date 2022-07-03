@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iw1-Io-9If">
-                                <rect key="frame" x="8" y="8" width="359" height="181"/>
+                                <rect key="frame" x="8" y="8" width="359" height="220"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3n-fy-npg">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="34"/>
@@ -45,6 +45,14 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
                                             <action selector="clicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f2c-a6-CDL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bQ-tV-pWU">
+                                        <rect key="frame" x="0.0" y="189" width="359" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                        <connections>
+                                            <action selector="clear:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yeR-Sc-MNq"/>
                                         </connections>
                                     </button>
                                 </subviews>

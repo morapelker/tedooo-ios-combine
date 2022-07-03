@@ -21,8 +21,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.textPublisher ~> textFieldSubject => bag
+//        textField.textPublisher ~> textFieldSubject => bag
         textView.textPublisher ~> textViewSubject => bag
+        textField <~> textFieldSubject => bag
+    }
+    
+    @IBAction func clear(_ sender: Any) {
+        textFieldSubject.send(nil)
     }
     
     @IBAction func clicked(_ sender: Any) {
