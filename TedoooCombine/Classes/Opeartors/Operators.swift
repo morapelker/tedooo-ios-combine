@@ -57,6 +57,24 @@ extension UITextField {
     
 }
 
+
+extension UITextView {
+
+    public static func <~> (publisher: UITextView, subject: CurrentValueSubject<String?, Never>) -> [AnyCancellable] {
+        let c1 = publisher.textPublisher.sink { text in
+            subject.send(text)
+        }
+        let c2 = subject.sink { [weak publisher] newText in
+            guard let self = publisher else { return }
+            if self.text != newText {
+                self.text = newText
+            }
+        }
+        return [c1, c2]
+    }
+    
+}
+
 public extension Publisher {
     func withPrevious() -> AnyPublisher<(previous: Output?, current: Output), Failure> {
         scan(Optional<(Output?, Output)>.none) { ($0?.1, $1) }
